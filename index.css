@@ -13,6 +13,8 @@
 * {
   box-sizing: border-box;
   font-family: "Inter";
+
+  font-size: clamp(1vw, 1.4vw, 1.2vw);
 }
 
 body {
@@ -22,10 +24,13 @@ body {
   height: 100%;
 
   background-color: white;
+
+  padding-left: clamp(5vw, 7vw, 6vw);
+  padding-right: clamp(5vw, 7vw, 6vw);
 }
 
 main {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
 }
 
 nav {
@@ -35,7 +40,8 @@ nav {
   justify-content: end;
   align-items: center;
 
-  width: 95%;
+  margin-top: clamp(1vw, 3vw, 2vw);
+  margin-bottom: clamp(1vw, 3vw, 2vw);
 }
 
 ul {
@@ -52,10 +58,34 @@ li {
 
 li a {
   text-decoration: none;
+  color: black;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "InterBold";
 }
 
 h1 {
-  font-family: "InterBold";
+  font-size: clamp(3vw, 4vw, 3.5vw);
+  width: 70%;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: clamp(2vw, 3vw, 2.5vw);
+
+  color: #e3b364;
+}
+
+h3 {
+  font-size: clamp(1.1vw, 2.1vw, 1.6vw);
+  cursor: pointer;
+}
+
+h3:hover {
+  color: #e3b364;
 }
 
 span {
@@ -69,6 +99,7 @@ hr {
 a:hover {
   transition: 0.3s;
   color: #dfa3a0;
+  font-weight: bold;
 }
 
 .checkbtn {
@@ -82,14 +113,15 @@ a:hover {
 
 .main-content {
   display: grid;
-  grid-template-columns: 1fr 0.6fr;
+  grid-template-columns: 1fr 0.53fr;
   grid-template-rows: 1fr;
 
   column-gap: calc(1em + 1rem);
+
+  margin-bottom: clamp(3.5vw, 5.5vw, 4.5vw);
 }
 
 .main-content-col1 {
-  border: 1px solid gray;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1.2fr 0.8fr;
@@ -99,6 +131,15 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+}
+
+.main-text div p {
+  padding: clamp(0.5vw, 0.7vw, 0.6vw);
+  line-height: clamp(1.5vw, 2.4vw, 2vw);
+}
+
+.main-text div {
+  margin-top: 12%;
 }
 
 .image {
@@ -111,8 +152,19 @@ a:hover {
 
 .main-content-col2 {
   background-color: #00001a;
-
   color: white;
+
+  padding: clamp(1.5vw, 2.5vw, 2vw);
+}
+
+.main-content-col2 p {
+  font-size: clamp(1.2vw, 1.8vw, 1.4vw);
+
+  text-align: justify;
+}
+
+.main-content-col2 div {
+  margin-bottom: clamp(3.5vw, 5vw, 4vw);
 }
 
 .btn-read-more {
@@ -131,7 +183,9 @@ a:hover {
 }
 
 .other-articles {
-  background-color: #dfa3a0;
+  /* background-color: #dfa3a0; */
+
+  margin-bottom: clamp(2.5vw, 4.5vw, 3.5vw);
 
   display: grid;
   grid-template-columns: repeat(3, 0.5fr);
@@ -166,6 +220,13 @@ a:hover {
   background-size: cover;
 }
 
+.text-article {
+  padding-left: clamp(1vw, 2vw, 1.5vw);
+  padding-right: clamp(1vw, 2vw, 1.5vw);
+
+  line-height: clamp(1.5vw, 2.5vw, 1.8vw);
+}
+
 .article-1,
 .article-2,
 .article-3 {
@@ -173,6 +234,21 @@ a:hover {
   grid-template-columns: 0.5fr 1fr;
   grid-template-rows: 1fr;
 }
+
+.article-1 h2,
+.article-2 h2,
+.article-3 h2 {
+  color: gray;
+
+  opacity: 0.3;
+}
+
+.article-1 h3:hover,
+.article-2 h3:hover,
+.article-3 h3:hover {
+  color: #de3806;
+}
+
 #check {
   display: none;
 }
