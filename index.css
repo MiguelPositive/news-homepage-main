@@ -29,10 +29,6 @@ body {
   padding-right: clamp(5vw, 7vw, 6vw);
 }
 
-main {
-  /* background-color: blueviolet; */
-}
-
 nav {
   position: relative;
 
@@ -94,6 +90,7 @@ span {
 
 hr {
   opacity: 0.4;
+  z-index: -1;
 }
 
 a:hover {
