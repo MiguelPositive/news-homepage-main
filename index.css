@@ -130,7 +130,7 @@ a:hover {
   grid-template-rows: 1fr;
 }
 
-.main-text div p {
+.main-text p {
   padding: clamp(0.5vw, 0.7vw, 0.6vw);
   line-height: clamp(1.5vw, 2.4vw, 2vw);
 }
@@ -180,8 +180,6 @@ a:hover {
 }
 
 .other-articles {
-  /* background-color: #dfa3a0; */
-
   margin-bottom: clamp(2.5vw, 4.5vw, 3.5vw);
 
   display: grid;
@@ -283,14 +281,61 @@ a:hover {
     display: block;
 
     position: absolute;
-    top: 0;
+    top: -1rem;
 
     z-index: 1;
+  }
+
+  .checkbtn i {
+    font-size: calc(2rem + 0.5em);
   }
 
   #check:checked ~ ul {
     left: 0;
 
     transition: linear 0.3s;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .image {
+    background-image: url("./assets/images/image-web-3-mobile.jpg");
+  }
+  .main-content-col1 {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .main-text {
+    grid-template-columns: 1fr;
+    grid-template-rows: 25% 50% 25%;
+  }
+
+  .main-text p {
+    margin: 0;
+    margin-top: -5rem;
+
+    font-size: calc(3rem + 0.5em);
+    line-height: 7rem;
+  }
+
+  h1 {
+    margin: 0;
+    margin-top: -5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    text-align: center;
+    font-size: calc(7rem + 0.5em);
+  }
+  .btn-read-more {
+    height: 35%;
+  }
+
+  .btn-read-more,
+  .btn-read-more span {
+    font-size: 3rem;
   }
 }
