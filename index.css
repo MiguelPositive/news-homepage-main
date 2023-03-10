@@ -3,8 +3,6 @@
 }
 
 body {
-  position: relative;
-
   margin: 0;
 
   min-width: 100vw;
@@ -16,52 +14,83 @@ body {
 nav {
   position: relative;
 
-  margin-top: 0;
+  background-color: rgba(42, 22, 93, 0.37);
 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background-color: aquamarine;
-}
-
-.btn-nav {
-  display: none;
-  cursor: pointer;
-}
-
-.menu ul {
-  display: flex;
-  justify-content: space-evenly;
+  justify-content: end;
   align-items: center;
 }
 
-.activate-nav {
-  flex-direction: column;
+ul {
+  display: flex;
+  justify-content: center;
+
+  transition: linear 0.3s;
 }
 
-#menu-nav li {
+li {
+  margin-right: calc(1em + 1rem);
   list-style: none;
+}
 
-  margin-right: 1rem;
+li a {
+  text-decoration: none;
+}
+
+.checkbtn {
+  position: absolute;
+  right: 0;
+
+  cursor: pointer;
+
+  display: none;
+}
+
+#check {
+  display: none;
 }
 
 @media (max-width: 900px) {
   main {
-    margin-top: calc(1rem + 1em);
+    margin-top: 1rem;
   }
 
-  .btn-nav {
-    position: absolute;
+  ul {
+    position: fixed;
 
+    top: -1rem;
+    left: -200%;
+
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(255, 127, 80);
+
+    z-index: 0;
+
+    flex-wrap: wrap;
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .checkbtn {
     display: block;
 
+    position: absolute;
     top: 0;
-    right: 0;
+
+    z-index: 1;
   }
 
-  #menu-nav {
-    display: none;
-    flex-direction: column;
+  #check:checked ~ ul {
+    left: 0;
+
+    transition: linear 0.3s;
   }
 }
