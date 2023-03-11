@@ -52,11 +52,6 @@ li {
   list-style: none;
 }
 
-li a {
-  text-decoration: none;
-  color: black;
-}
-
 h1,
 h2,
 h3 {
@@ -72,6 +67,7 @@ h2 {
   margin-top: 0;
   font-size: clamp(2vw, 3vw, 2.5vw);
 
+  transition: 0.3s;
   color: #e3b364;
 }
 
@@ -81,6 +77,7 @@ h3 {
 }
 
 h3:hover {
+  transition: 0.3s;
   color: #e3b364;
 }
 
@@ -93,10 +90,16 @@ hr {
   z-index: -1;
 }
 
-a:hover {
-  transition: 0.3s;
-  color: #dfa3a0;
+a {
+  text-decoration: none;
+  color: black;
+
   font-weight: bold;
+}
+
+a:hover {
+  color: #dfa3a0;
+  transition: 0.3s;
 }
 
 .checkbtn {
@@ -241,6 +244,7 @@ a:hover {
 .article-1 h3:hover,
 .article-2 h3:hover,
 .article-3 h3:hover {
+  transition: 0.3s;
   color: #de3806;
 }
 
@@ -250,18 +254,18 @@ a:hover {
 
 @media (max-width: 900px) {
   main {
-    margin-top: 1rem;
+    margin-top: calc(8rem + 0.5em);
   }
 
   ul {
     position: fixed;
 
     top: -1rem;
-    left: -200%;
+    right: -200%;
 
     min-width: 100vw;
     min-height: 100vh;
-    background-color: rgb(255, 127, 80);
+    background-color: white;
 
     z-index: 0;
 
@@ -277,13 +281,25 @@ a:hover {
     align-items: center;
   }
 
+  a {
+    font-size: calc(7rem + 0.5rem);
+    font-family: "InterBold";
+    color: #00001a;
+
+    text-align: center;
+  }
+
   .checkbtn {
     display: block;
 
-    position: absolute;
-    top: -1rem;
+    position: fixed;
+    top: -4.5rem;
+    right: 4rem;
 
     z-index: 1;
+
+    font-size: calc(13rem + 0.5em);
+    color: rgba(0, 0, 0, 0.258);
   }
 
   .checkbtn i {
@@ -291,7 +307,7 @@ a:hover {
   }
 
   #check:checked ~ ul {
-    left: 0;
+    right: 0;
 
     transition: linear 0.3s;
   }
@@ -337,5 +353,58 @@ a:hover {
   .btn-read-more,
   .btn-read-more span {
     font-size: 3rem;
+  }
+
+  .main-content-col2 {
+    margin-top: calc(1rem + 0.5em);
+    padding: calc(4rem + 0.5em);
+  }
+  .main-content-col2 p {
+    font-size: calc(4rem + 0.5em);
+  }
+
+  .main-content-col2 h2 {
+    font-size: calc(5rem + 0.5em);
+  }
+
+  .main-content-col2 h3 {
+    font-size: calc(4.5rem + 0.5em);
+  }
+
+  .other-articles {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    row-gap: calc(3rem + 0.5em);
+  }
+
+  .text-article {
+    padding-top: calc(3rem + 0.5em);
+  }
+
+  .other-articles h2 {
+    font-size: calc(4.5rem + 0.5em);
+  }
+
+  .other-articles h3 {
+    font-size: calc(3.5rem + 0.5em);
+    line-height: calc(3.5rem + 0.5em);
+  }
+
+  .other-articles p {
+    font-size: calc(3em + 0.5em);
+    line-height: calc(3.5rem + 0.5em);
+  }
+}
+
+@media (max-width: 607px) {
+  .main-content-col2 {
+    margin-top: calc(7rem + 0.5em);
+  }
+}
+
+@media (max-width: 301px) {
+  .image-article {
+    background-position: center;
   }
 }

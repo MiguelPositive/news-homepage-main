@@ -1,4 +1,5 @@
 const checkbtn = document.querySelector(".checkbtn");
+const logoButton = document.getElementById("logo-button");
 const line1 = document.getElementById("line-1");
 const line2 = document.getElementById("line-2");
 const h2 = document.querySelectorAll("h2");
@@ -11,9 +12,11 @@ const handleClick = () => {
   if (temp) {
     line1.style.cssText = "transition: 0.8s; opacity: 0";
     line2.style.cssText = "transition: 0.8s; opacity: 0";
+    logoButton.className = "bi bi-x-lg";
   } else {
     line1.style.cssText = "transition: 0.3s; opacity: 0.4";
     line2.style.cssText = "transition: 0.3s; opacity: 0.4";
+    logoButton.className = "bi bi-list";
   }
 };
 
